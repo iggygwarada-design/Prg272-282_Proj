@@ -28,55 +28,39 @@ namespace PRG271._281_PROJ
             string ageText = txtAge.Text.Trim();
             string recoveryScoreText = txtRecoveryScore.Text.Trim();
 
-            // Validate each field separately and focus the field with the problem.
-            if (!ValidateAnimalId(animalId))
-            {
-                txtAnimalId.Focus();
-                return;
-            }
-
-            if (AnimalIdAlreadyExists(animalId))
-            {
-                MessageBox.Show("Animal ID already exists. Please enter a unique Animal ID.",
-                    "Invalid Animal ID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtAnimalId.Focus();
-                return;
-            }
-
-            if (!ValidateTextField(name, "Name"))
-            {
-                txtName.Focus();
-                return;
-            }
-
-            if (!ValidateTextField(species, "Species"))
-            {
-                txtSpecies.Focus();
-                return;
-            }
-
+            // Check individual fields first so the user knows which box to correct.
+            if (!ValidateAnimalId(animalId)) { txtAnimalId.Focus(); return; }
+            if (!ValidateTextField(name, "Name")) { txtName.Focus(); return; }
+            if (!ValidateTextField(species, "Species")) { txtSpecies.Focus(); return; }
             if (!int.TryParse(ageText, out int age) || age < 0 || age > 100)
             {
-                MessageBox.Show("Age must be a whole number between 0 and 100.",
-                    "Invalid Age", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Age must be a whole number between 0 and 100.");
                 txtAge.Focus();
                 return;
             }
-
-            if (!int.TryParse(recoveryScoreText, out int recoveryScore) ||
-                recoveryScore < 0 || recoveryScore > 100)
+            if (!int.TryParse(recoveryScoreText, out int recoveryScore) || recoveryScore < 0 || recoveryScore > 100)
             {
-                MessageBox.Show("Recovery Score must be a whole number between 0 and 100.",
-                    "Invalid Recovery Score", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Recovery Score must be a whole number between 0 and 100.");
                 txtRecoveryScore.Focus();
                 return;
             }
 
+            // Reuse the same business-rule check that Member 3 uses for Update.
+            BusinessLogic logic = new BusinessLogic();
+            if (!logic.ConditionsMet(animalId, name, species, ageText)) return;
+
             try
             {
-                // Member 1's shared classification method must be used here.
-                // Do not create a second classification method in this form.
+                // The classification is shared with the Update feature.
                 var classification = BusinessLogic.ClassifyRecoveryScore(recoveryScore);
+
+                // Check the file here so a read error is caught before saving.
+                if (AnimalIdAlreadyExists(animalId))
+                {
+                    MessageBox.Show("Animal ID already exists. Please enter another ID.");
+                    txtAnimalId.Focus();
+                    return;
+                }
 
                 // Create the exact pipe-separated record required by the project brief.
                 string record = string.Join("|", animalId, name, species, age,
