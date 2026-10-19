@@ -1,228 +1,179 @@
-﻿namespace PRG271._281_PROJ
+namespace PRG271._281_PROJ
 {
     partial class AddFormcs
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
-            {
                 components.Dispose();
-            }
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.txtAnimalId = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtSpecies = new System.Windows.Forms.TextBox();
+            this.txtAge = new System.Windows.Forms.TextBox();
+            this.txtRecoveryScore = new System.Windows.Forms.TextBox();
+            this.btnAddAnimal = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.lblAnimalId = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblSpecies = new System.Windows.Forms.Label();
+            this.lblAge = new System.Windows.Forms.Label();
+            this.lblRecoveryScore = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox7
+            // txtAnimalId
             // 
-            this.textBox7.Location = new System.Drawing.Point(412, 127);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 22);
-            this.textBox7.TabIndex = 32;
+            this.txtAnimalId.Location = new System.Drawing.Point(40, 85);
+            this.txtAnimalId.Name = "txtAnimalId";
+            this.txtAnimalId.Size = new System.Drawing.Size(250, 22);
+            this.txtAnimalId.TabIndex = 0;
             // 
-            // textBox6
+            // txtName
             // 
-            this.textBox6.Location = new System.Drawing.Point(288, 205);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 22);
-            this.textBox6.TabIndex = 31;
+            this.txtName.Location = new System.Drawing.Point(40, 140);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(250, 22);
+            this.txtName.TabIndex = 1;
             // 
-            // textBox5
+            // txtSpecies
             // 
-            this.textBox5.Location = new System.Drawing.Point(412, 205);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 22);
-            this.textBox5.TabIndex = 30;
+            this.txtSpecies.Location = new System.Drawing.Point(40, 195);
+            this.txtSpecies.Name = "txtSpecies";
+            this.txtSpecies.Size = new System.Drawing.Size(250, 22);
+            this.txtSpecies.TabIndex = 2;
             // 
-            // textBox4
+            // txtAge
             // 
-            this.textBox4.Location = new System.Drawing.Point(288, 269);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 29;
+            this.txtAge.Location = new System.Drawing.Point(40, 250);
+            this.txtAge.Name = "txtAge";
+            this.txtAge.Size = new System.Drawing.Size(250, 22);
+            this.txtAge.TabIndex = 3;
             // 
-            // textBox3
+            // txtRecoveryScore
             // 
-            this.textBox3.Location = new System.Drawing.Point(412, 269);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 28;
+            this.txtRecoveryScore.Location = new System.Drawing.Point(40, 305);
+            this.txtRecoveryScore.Name = "txtRecoveryScore";
+            this.txtRecoveryScore.Size = new System.Drawing.Size(250, 22);
+            this.txtRecoveryScore.TabIndex = 4;
             // 
-            // textBox2
+            // btnAddAnimal
             // 
-            this.textBox2.Location = new System.Drawing.Point(288, 330);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 27;
+            this.btnAddAnimal.Location = new System.Drawing.Point(40, 355);
+            this.btnAddAnimal.Name = "btnAddAnimal";
+            this.btnAddAnimal.Size = new System.Drawing.Size(110, 32);
+            this.btnAddAnimal.TabIndex = 5;
+            this.btnAddAnimal.Text = "Add Animal";
+            this.btnAddAnimal.UseVisualStyleBackColor = true;
+            this.btnAddAnimal.Click += new System.EventHandler(this.btnAddAnimal_Click);
             // 
-            // textBox1
+            // btnClear
             // 
-            this.textBox1.Location = new System.Drawing.Point(288, 127);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 26;
+            this.btnClear.Location = new System.Drawing.Point(180, 355);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(110, 32);
+            this.btnClear.TabIndex = 6;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // label8
+            // lblAnimalId
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(322, 99);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(44, 16);
-            this.label8.TabIndex = 25;
-            this.label8.Text = "label8";
+            this.lblAnimalId.AutoSize = true;
+            this.lblAnimalId.Location = new System.Drawing.Point(40, 65);
+            this.lblAnimalId.Name = "lblAnimalId";
+            this.lblAnimalId.Size = new System.Drawing.Size(72, 16);
+            this.lblAnimalId.TabIndex = 7;
+            this.lblAnimalId.Text = "Animal ID";
             // 
-            // label7
+            // lblName
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(440, 99);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 16);
-            this.label7.TabIndex = 24;
-            this.label7.Text = "label7";
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(40, 120);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(44, 16);
+            this.lblName.TabIndex = 8;
+            this.lblName.Text = "Name";
             // 
-            // label6
+            // lblSpecies
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(322, 177);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 16);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "label6";
+            this.lblSpecies.AutoSize = true;
+            this.lblSpecies.Location = new System.Drawing.Point(40, 175);
+            this.lblSpecies.Name = "lblSpecies";
+            this.lblSpecies.Size = new System.Drawing.Size(56, 16);
+            this.lblSpecies.TabIndex = 9;
+            this.lblSpecies.Text = "Species";
             // 
-            // label5
+            // lblAge
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(440, 177);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 16);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "label5";
+            this.lblAge.AutoSize = true;
+            this.lblAge.Location = new System.Drawing.Point(40, 230);
+            this.lblAge.Name = "lblAge";
+            this.lblAge.Size = new System.Drawing.Size(29, 16);
+            this.lblAge.TabIndex = 10;
+            this.lblAge.Text = "Age";
             // 
-            // label4
+            // lblRecoveryScore
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(322, 250);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 16);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "label4";
+            this.lblRecoveryScore.AutoSize = true;
+            this.lblRecoveryScore.Location = new System.Drawing.Point(40, 285);
+            this.lblRecoveryScore.Name = "lblRecoveryScore";
+            this.lblRecoveryScore.Size = new System.Drawing.Size(101, 16);
+            this.lblRecoveryScore.TabIndex = 11;
+            this.lblRecoveryScore.Text = "Recovery Score";
             // 
-            // label3
+            // lblTitle
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(440, 250);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 16);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "label3";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(322, 308);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 16);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "label2";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(356, 389);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 33;
-            this.button1.Text = "Add Animal";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(261, 57);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(308, 16);
-            this.label1.TabIndex = 34;
-            this.label1.Text = "Enter the deatils of the animal you would like to add";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.lblTitle.Location = new System.Drawing.Point(40, 25);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(143, 20);
+            this.lblTitle.TabIndex = 12;
+            this.lblTitle.Text = "Add New Animal";
             // 
             // AddFormcs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(360, 425);
+            this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.lblRecoveryScore);
+            this.Controls.Add(this.lblAge);
+            this.Controls.Add(this.lblSpecies);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.lblAnimalId);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnAddAnimal);
+            this.Controls.Add(this.txtRecoveryScore);
+            this.Controls.Add(this.txtAge);
+            this.Controls.Add(this.txtSpecies);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.txtAnimalId);
             this.Name = "AddFormcs";
-            this.Text = "Enter the details of the Anmal you would like to add";
+            this.Text = "Add Animal";
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
-        #endregion
-
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtAnimalId;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtSpecies;
+        private System.Windows.Forms.TextBox txtAge;
+        private System.Windows.Forms.TextBox txtRecoveryScore;
+        private System.Windows.Forms.Button btnAddAnimal;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Label lblAnimalId;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblSpecies;
+        private System.Windows.Forms.Label lblAge;
+        private System.Windows.Forms.Label lblRecoveryScore;
+        private System.Windows.Forms.Label lblTitle;
     }
 }
