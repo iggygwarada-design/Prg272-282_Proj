@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -28,26 +28,33 @@ namespace PRG271._281_PROJ
             string ageText = txtAge.Text.Trim();
             string recoveryScoreText = txtRecoveryScore.Text.Trim();
 
-            // Check individual fields first so the user knows which box to correct.
-            if (!ValidateAnimalId(animalId)) { txtAnimalId.Focus(); return; }
-            if (!ValidateTextField(name, "Name")) { txtName.Focus(); return; }
-            if (!ValidateTextField(species, "Species")) { txtSpecies.Focus(); return; }
-            if (!int.TryParse(ageText, out int age) || age < 0 || age > 100)
+            // Member 3's shared method checks ID, Name, Species and Age.
+            BusinessLogic logic = new BusinessLogic();
+            if (!logic.ConditionsMet(animalId, name, species, ageText))
             {
-                MessageBox.Show("Age must be a whole number between 0 and 100.");
-                txtAge.Focus();
+                // Move to the field that needs correcting.
+                if (animalId.Length != 7 || !animalId.StartsWith("WR-") ||
+                    !animalId.Substring(3).All(char.IsDigit))
+                    txtAnimalId.Focus();
+                else if (name.Length < 1 || name.Length > 30 || name.Contains("|"))
+                    txtName.Focus();
+                else if (species.Length < 1 || species.Length > 30 || species.Contains("|"))
+                    txtSpecies.Focus();
+                else
+                    txtAge.Focus();
                 return;
             }
-            if (!int.TryParse(recoveryScoreText, out int recoveryScore) || recoveryScore < 0 || recoveryScore > 100)
+
+            // Recovery Score is not covered by ConditionsMet().
+            if (!int.TryParse(recoveryScoreText, out int recoveryScore) ||
+                recoveryScore < 0 || recoveryScore > 100)
             {
                 MessageBox.Show("Recovery Score must be a whole number between 0 and 100.");
                 txtRecoveryScore.Focus();
                 return;
             }
 
-            // Reuse the same business-rule check that Member 3 uses for Update.
-            BusinessLogic logic = new BusinessLogic();
-            if (!logic.ConditionsMet(animalId, name, species, ageText)) return;
+            int age = int.Parse(ageText);
 
             try
             {
@@ -96,54 +103,6 @@ namespace PRG271._281_PROJ
                     "The animal could not be added.\n\nDetails: " + ex.Message,
                     "Unexpected Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private bool ValidateAnimalId(string animalId)
-        {
-            if (string.IsNullOrWhiteSpace(animalId))
-            {
-                MessageBox.Show("Animal ID is required.", "Invalid Animal ID",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-
-            // Required format: WR- followed by exactly four digits.
-            if (animalId.Length != 7 ||
-                !animalId.StartsWith("WR-") ||
-                !animalId.Substring(3).All(char.IsDigit))
-            {
-                MessageBox.Show("Animal ID must be in the format WR-0000.",
-                    "Invalid Animal ID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-
-            return true;
-        }
-
-        private bool ValidateTextField(string value, string fieldName)
-        {
-            if (string.IsNullOrWhiteSpace(value))
-            {
-                MessageBox.Show(fieldName + " is required.", "Invalid " + fieldName,
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-
-            if (value.Length > 30)
-            {
-                MessageBox.Show(fieldName + " must be between 1 and 30 characters.",
-                    "Invalid " + fieldName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-
-            if (value.Contains("|"))
-            {
-                MessageBox.Show(fieldName + " cannot contain the | character.",
-                    "Invalid " + fieldName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-
-            return true;
         }
 
         private bool AnimalIdAlreadyExists(string animalId)
